@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="description" content="Unimo Tech Radar: a tool to visualize technology choices, inspire and support Engineering teams at Unimo to pick the best technologies for new projects">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unimo Tech Radar</title>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="radar.js"></script>
+
+<link rel="stylesheet" href="radar.css">
+</head>
+
+<body>
+
+<svg id="radar"></svg>
+
+<script>
+radar_visualization({
+  svg_id: "radar",
+  width: 1450,
+  height: 1000,
+  colors: {
+    background: "#fff",
+    grid: '#dddde0',
+    inactive: "#ddd"
+  },
+  title: "Unimo Tech Radar",
+  date: "2023.01",
+  quadrants: [
+    { name: "Languages and Frameworks" },
+    { name: "Tools & Patterns" },
+    { name: "Infrastructure" },
+    { name: "Data Management" },
+  ],
+  rings: [
+    { name: "ADOPT", color: "#5ba300" },
+    { name: "TRIAL", color: "#009eb0" },
+    { name: "ASSESS", color: "#c7ba00" },
+    { name: "HOLD", color: "#e09b96" }
+  ],
+  print_layout: true,
+  links_in_new_tabs: true,
+  // zoomed_quadrant: 0,
+  //ENTRIES
+entries: [
+  // Languages and Frameworks
+      { label: 'Jest', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'NodeJS', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'Nuxt', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'TypeScript', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'Vue.js', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'PHP', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'Symfony', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'Golang', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'Apollo GraphQL Federation', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'PHPUnit', quadrant: 0, ring: 0, moved: 0 },
+      { label: 'Yii2', quadrant: 0, ring: 3, moved: 0 },
+
+// Tools & Patterns
+      { label: 'Apollo Client', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'ESLint + Prettier', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'JetBrains YouTrack', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Mobile Web', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Smartlook', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Sentry', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Vite', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Webpack', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Yarn', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Service oriented architecture', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Gitlab', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'CS Fixer', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'PHP Stan', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Composer', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Tilt', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Newrelic', quadrant: 1, ring: 0, moved: 0 },
+      { label: 'Road Runner', quadrant: 1, ring: 1, moved: 0 },
+      { label: 'npm', quadrant: 1, ring: 3, moved: 0 },
+      { label: 'Event-driven architecture', quadrant: 1, ring: 0, moved: 0 },
+
+
+// Infrastructure
+      { label: 'GCP', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Ansible', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Terraform', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'ArgoCD', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'GKE', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Docker', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Istio', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Grafana', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Cortex metrics', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Prometheus', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Gitlab CI', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Packer', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'Loki', quadrant: 2, ring: 0, moved: 0 },
+      { label: 'OpenTelemetry', quadrant: 2, ring: 0, moved: 0 },
+
+//  Data Management:
+      { label: 'MySQL', quadrant: 3, ring: 0, moved: 0 },
+      { label: 'RabbitMQ', quadrant: 3, ring: 0, moved: 0 },
+      { label: 'Redis', quadrant: 3, ring: 0, moved: 0 },
+      { label: 'Memcached', quadrant: 3, ring: 0, moved: 0 },
+      { label: 'MongoDB', quadrant: 3, ring: 3, moved: 0 },
+      { label: 'GCP BigQuery', quadrant: 3, ring: 0, moved: 0 },
+      { label: 'Prometheus', quadrant: 3, ring: 0, moved: 0 },
+      { label: 'Logstash', quadrant: 3, ring: 1, moved: 0 },
+      { label: 'StatsD', quadrant: 3, ring: 1, moved: 0 },
+
+    ]
+  //ENTRIES
+});
+</script>
+
+<table>
+    <tbody><tr>
+        <td>
+
+            <h3>What is the Tech Radar?</h3>
+
+            <p>
+                The Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
+            </p>
+
+            <ul>
+                <li><strong>ADOPT</strong> — Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Unimo production environment, low risk and recommended to be widely used.</li>
+                <li><strong>TRIAL</strong> — Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
+                <li><strong>ASSESS</strong> — Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
+                <li><strong>HOLD</strong> — Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
+            </ul>
+
+            <p>BTW, if you would like to create your own Tech Radar check this <a href="https://github.com/zalando/tech-radar" target="_blank">open sourced code</a> to generate this visualization.</p>
+
+        </td></tr>
+    </tbody></table>
+</table>
+
+</body>
+</html>
